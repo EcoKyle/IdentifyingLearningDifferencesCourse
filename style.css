@@ -1,0 +1,359 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: left;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .course-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-section {
+    display: none;
+    padding: 20px;
+  }
+  
+  .active {
+    display: block;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .nav-buttons {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+  
+    .nav-buttons button {
+      width: 100%;
+    }
+  }  
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #005bb5;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .button-link {
+    display: inline-block;
+    background-color: #005bb5;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .button-link:hover {
+    background-color: #004494;
+  }
+  
+  
+  button:hover {
+    background-color: #004494;
+  }
+  
+  button:disabled {
+    background-color: #767676;
+    cursor: not-allowed;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    height: 15px;
+    position: relative;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #005bb5;
+    width: 0%;
+    transition: width 0.5s;
+  }
+  
+  .progress-bar span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .vocab-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0;
+  }
+  
+  .vocab-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .vocab-card:hover,
+  .vocab-card:focus {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    outline: none;
+  }
+  
+  .vocab-card h4 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }  
+
+  /* Strength Matcher styles */
+  .match-grid {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .match-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 8px;
+  }
+  .match-label {
+    flex: 1;
+    font-weight: bold;
+  }
+  .match-dropzone {
+    flex: 2;
+    background-color: #e6f0ff;
+    border: 2px dashed #99bbee;
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 40px;
+    transition: background 0.3s;
+  }
+  .match-dropzone.filled {
+    background-color: #d0e7ff;
+    border-style: solid;
+  }
+  .match-draggables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 30px;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .draggable-definition {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: grab;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+
+.incorrect-match {
+  background-color: #fdd; /* Soft red/pink background */
+  border: 2px solid #c22; /* Colorblind-friendly red */
+  color: #222;
+}
+  
+/* Drag-and-drop styles */
+.dropzones-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.dropzone {
+  flex: 1;
+  min-width: 300px;
+  min-height: 200px;
+  padding: 15px;
+  border: 2px dashed #ccc;
+  background-color: #e6f7ff;
+  color: #005073;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropzone.filled {
+  background-color: #d4efff;
+  border-color: #005bb5;
+}
+
+.draggables-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.draggable {
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: grab;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.draggable:active {
+  cursor: grabbing;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.incorrect-behavior {
+  background-color: #fdd !important;
+  border: 2px solid #c22 !important;
+  color: #222;
+}
+
+.scenario-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Capstone layout spacing */
+#capstone-activity-container > * {
+  margin-bottom: 1.5rem;
+}
+
+/* Scenario select dropdown */
+#scenarioSelect {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  max-width: 100%;
+}
+
+/* Capstone summary textarea (Part 3) */
+.capstone-summary {
+  width: 100%;
+  height: 160px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+/* Part 3 prompt */
+.capstone-synthesis-prompt {
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+.capstone-feedback {
+  margin-top: 1em;
+  font-size: 1.1em;
+  background-color: #e6ffe6;
+  border-left: 4px solid #00b300;
+  padding: 1em;
+  border-radius: 6px;
+}
+.capstone-buttons {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+/* Reset button for capstone */
+#resetButton {
+  background-color: #ff5e5e;
+  color: white;
+}
+
+#resetButton:hover {
+  background-color: #d94444;
+}
+
+/* Video styles= */
+
+.video-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.video-container video {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+.fade-in {
+  animation: fadeSlideIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

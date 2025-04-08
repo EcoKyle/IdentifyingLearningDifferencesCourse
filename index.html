@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Learning Course</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="course-container">
+    
+    <!-- Progress Bar -->
+    <div class="progress-bar" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar-fill" id="progress"></div>
+      <span id="progress-text">0%</span>
+    </div>
+
+    <div id="section-container" class="course-section active fade-in" aria-live="polite">
+      <!-- Section content will be dynamically injected here -->
+    </div>    
+
+    <div class="nav-buttons">
+      <button id="prevBtn">← Previous</button>
+      <button id="nextBtn">Next →</button>
+    </div>    
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
+</body>
+</html>

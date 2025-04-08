@@ -1,0 +1,17 @@
+<h2>Conclusion</h2>
+<p>You've completed the course! Enter your name below to download your personalized certificate.</p>
+
+<form id="certificate-form"></form>
+<label for="learnerName">Enter your name:</label>
+<input type="text" id="learnerName" placeholder="Type your name..." />
+<button id="generateCertificateBtn">🎓 Download Certificate</button>
+<p id="name-message" class="name-warning"></p> <!-- 👈 This is where the message shows -->
+</form>
+
+<button id="clearProgressBtn">🔄 Reset My Progress</button>
+
+<div id="certificatePreview"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="features/certificate.js"></script>    
