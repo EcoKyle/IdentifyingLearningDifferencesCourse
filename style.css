@@ -40,6 +40,15 @@ body {
       width: 100%;
     }
   }  
+
+/* Responsive Image Sizing */
+.responsive-img {
+  max-width: 600px;   /* or whatever size feels good */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
   
   button {
     padding: 10px 15px;
