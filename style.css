@@ -41,9 +41,8 @@ body {
     }
   }  
 
-/* Responsive Image Sizing */
-.responsive-img {
-  max-width: 600px;
+.image-center img {
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
