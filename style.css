@@ -18,6 +18,11 @@ body {
     display: none;
     padding: 20px;
   }
+
+#section-container {
+  overflow-y: auto;
+  height: calc(100vh - 160px);
+}
   
   .active {
     display: block;
